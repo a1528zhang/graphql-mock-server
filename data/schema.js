@@ -3,37 +3,48 @@ import { makeExecutableSchema } from 'graphql-tools';
 import resolvers from './resolvers';
 
 const schema = `
-type Author {
-  id: Int! # the ! means that every author object _must_ have an id
-  firstName: String
-  lastName: String
-  posts: [Post] # the list of Posts by this author
+type ActStudyArticle {
+  content: String
+  created_at: String
+  featured_image_url: String
+  id: Int
+  position: Int
+  slug: String
+  study_topic_id: Int
+  title: String!
+  topic: ActTopic
+  updated_at: String
 }
 
-type Post {
-  id: Int!
-  title: String
-  author: Author
-  votes: Int
+type ActStudyTopic {
+  articles: [ActStudyArticle]
+  id: ID!
+  name: String!
+  position: Int
+  section: ActSection
+}
+
+type ActTopic {
+  id: ID!
+  name: String!
+  position: Int
+  section: ActSection
+}
+
+type ActSection {
+  id: Int
+  name: String
+  study_topics: [ActStudyTopic]
+  topics: [ActTopic]
 }
 
 # the schema allows the following query:
 type Query {
-  posts: [Post]
-  author(id: Int!): Author
+  sectionWithStudyArticle: [ActSection]
+  studyArticles(id_eq: ID, id_in: [ID], topic_id_eq: ID, topic_name_eq: String, section_id_eq: ID): [ActStudyArticle]
 }
 
 # this schema allows the following mutation:
-type Mutation {
-  upvotePost (
-    postId: Int!
-  ): Post
-}
-
-type Subscription {
-  postUpvoted: Post
-}
-
 `;
 
 export default makeExecutableSchema({
