@@ -5,7 +5,7 @@ import * as Data from './data';
 const resolveFunctions = {
     Query: {
         sectionWithStudyArticle() {
-            return sections;
+            return Data.sections;
         },
         studyArticles(_, {id_eq, id_in, topic_id_eq, topic_name_eq, section_id_eq}) {
             return [find(Data.articles, {id: parseInt(id_eq)})];
