@@ -4,6 +4,7 @@
   "description": "Minimal set of code to write a GraphQL server with Apollo graphql-tools",
   "scripts": {
     "start": "nodemon ./server.js --exec babel-node",
+    "nohup": "nohup nodemon ./server.js --exec babel-node </dev/null &",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ."
   },
@@ -48,9 +49,10 @@
     "eslint": "^3.8.1",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.4.1",
     "nodemon": "^1.9.1",
-    "eslint-plugin-jsx-a11y": "^2.2.2"
+    "nohup": "^0.1.0"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
