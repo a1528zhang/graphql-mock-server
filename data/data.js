@@ -2,6 +2,17 @@
  * Created by az on 2017/6/6.
  */
 import { find, filter } from 'lodash';
+
+export const reminders = [
+    {id: 1, time: '06:30'},
+    {id: 2, time: '05:59'},
+    {id: 3, time: '04:00'},
+    {id: 4, time: '05:00'},
+    {id: 5, time: '06:00'},
+    {id: 6, time: '07:00'},
+    {id: 7, time: '08:00'},
+];
+
 export const articles = [
     {id: 1, content: "a", created_at: "b", featured_image_url: "3", study_topic_id: 1, title: "666"},
     {id: 2, content: "b", created_at: "b", featured_image_url: "3", study_topic_id: 2, title: "555"},
@@ -140,4 +151,3 @@ export const applications = [
             }
         ]},
 ];
-
