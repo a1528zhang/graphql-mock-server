@@ -70,14 +70,39 @@ type Application {
   tutor_test_types: [TestType]
 }
 
+# For Admin Calendar
+type Exam {
+    id: Int!
+    name: String!
+}
+
+type Reminder {
+    id: Int!
+    time: String!
+}
+
 # the schema allows the following query:
 type Query {
   sectionWithStudyArticle: [ActSection]
   studyArticles(id_eq: ID, id_in: [ID], topic_id_eq: ID, topic_name_eq: String, section_id_eq: ID): [ActStudyArticle]
   tutorApplication(state: String, id_eq: Int): [Application]
+  examList: [Exam]
+  reminderList: [Reminder]
 }
 
 # this schema allows the following mutation:
+type Mutation {
+    addReminder (
+      time: String!
+    ): [Reminder]
+    updateReminder (
+      id: Int!
+      time: String!
+    ): [Reminder]
+    deleteReminder (
+      id: Int!
+    ): [Reminder]
+}
 `;
 
 export default makeExecutableSchema({
