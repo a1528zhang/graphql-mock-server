@@ -67,19 +67,21 @@ const resolveFunctions = {
 
             return ret;
         },
-        addReminder(_, {time}) {
+        addReminder(_, {hour, minute}) {
             let ret = Data.reminders;
             ret.push({
                 id: ret.length + 1,
-                time: time
+                hour: hour,
+                minute: minute
             });
             return ret;
         },
-        updateReminder(_, {id, time}) {
+        updateReminder(_, {id, hour, minute}) {
             let ret = Data.reminders;
             let reminder = find(ret, {id: parseInt(id)});
             if (reminder) {
-                reminder.time = time;
+                reminder.hour = hour;
+                reminder.minute = minute;
             }
             return ret;
         },

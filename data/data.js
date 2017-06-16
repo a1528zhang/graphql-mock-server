@@ -320,13 +320,16 @@ export const eClassScheds = [
 export const reminders = [
     {
         id: 1,
-        time: '00:30'
+        hour: 0,
+        minute: 30
     }, {
         id: 2,
-        time: '01:59'
+        hour: 1,
+        minute: 59
     }, {
         id: 3,
-        time: '06:00'
+        hour: 6,
+        minute: 0
     }
 ];
 
