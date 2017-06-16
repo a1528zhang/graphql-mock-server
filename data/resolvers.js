@@ -22,9 +22,41 @@ const resolveFunctions = {
                 return [find(Data.applications, {id: parseInt(id_eq)})];
             }
             return Data.openApplications
+        },
+        tutors(_, {page}){
+            return Data.tutors;
+        },
+        examTypeList() {
+            return Data.examTypes;
+        },
+        eClassSchedList(_, {month}){
+            let ret = Data.eClassScheds;
+
+
+
+            return Data.eClassScheds;
         }
     },
     Mutation: {
+        updateEClassSched_ShutDown(_, {id}) {
+            let ret = find(Data.eClassScheds, {id: parseInt(id)});
+            ret.status = 'Shut Down';
+            return ret;
+        },
+        updateEClassSched_SaveSendEmail(_, {id, idTutor, typeClass, regStatus, isRemoveAll}) {
+            let ret = find(Data.eClassScheds, {id: parseInt(id)});
+            let tutor = find(Data.tutors, {id: parseInt(idTutor)});
+
+            ret.eClass.tutor = tutor;
+            ret.eClass.type = typeClass;
+            ret.regStatus = regStatus;
+            if (isRemoveAll) {
+                ret.enrolledCount = 0;
+                ret.enrolledList = [];
+            }
+
+            return ret;
+        },
         addReminder(_, {time}) {
             let ret = Data.reminders;
             ret.push({id: ret.length+1, time: time});
