@@ -1,4 +1,4 @@
-import { makeExecutableSchema } from 'graphql-tools';
+import {makeExecutableSchema} from 'graphql-tools';
 
 import resolvers from './resolvers';
 
@@ -91,7 +91,8 @@ type ExamType {
 
 type Reminder {
     id: Int!
-    time: String!
+    hour: Int!
+    minute: Int!
 }
 
 type Skill {
@@ -148,19 +149,18 @@ type Mutation {
         isRemoveAll: Boolean!
     ): EClassSched
     addReminder (
-      time: String!
+        hour: Int!
+        minute: Int!
     ): [Reminder]
     updateReminder (
-      id: Int!
-      time: String!
+        id: Int!
+        hour: Int!
+        minute: Int!
     ): [Reminder]
     deleteReminder (
-      id: Int!
+        id: Int!
     ): [Reminder]
 }
 `;
 
-export default makeExecutableSchema({
-  typeDefs: schema,
-  resolvers,
-});
+export default makeExecutableSchema({typeDefs: schema, resolvers});
