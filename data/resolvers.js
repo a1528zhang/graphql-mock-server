@@ -23,18 +23,28 @@ const resolveFunctions = {
             }
             return Data.openApplications
         },
-        tutors(_, {page}){
+        tutors(_, {page}) {
             return Data.tutors;
         },
         examTypeList() {
             return Data.examTypes;
         },
-        eClassSchedList(_, {month}){
-            let ret = Data.eClassScheds;
+        eClassSchedList(_, {year, month}) {
+            let lastDay = new Date(year, month - 2, 0).getDate();
+            lastDay -= 7;
+            let dateStart = new Date(year, month - 2, lastDay);
+            let dateEnd = new Date(year, month, 7);
 
+            let ret = [];
 
+            Data.eClassScheds.map(item => {
+                let dateItem = new Date(item.starts_at);
+                if (dateItem >= dateStart && dateItem <= dateEnd) {
+                    ret.push(item);
+                }
+            });
 
-            return Data.eClassScheds;
+            return ret;
         }
     },
     Mutation: {
@@ -59,7 +69,10 @@ const resolveFunctions = {
         },
         addReminder(_, {time}) {
             let ret = Data.reminders;
-            ret.push({id: ret.length+1, time: time});
+            ret.push({
+                id: ret.length + 1,
+                time: time
+            });
             return ret;
         },
         updateReminder(_, {id, time}) {
@@ -73,7 +86,7 @@ const resolveFunctions = {
         deleteReminder(_, {id}) {
             let ret = Data.reminders;
             let index = findIndex(ret, {id: parseInt(id)});
-            if (index && index >=0 ) {
+            if (index && index >= 0) {
                 ret.splice(index, 1);
             }
             return ret;

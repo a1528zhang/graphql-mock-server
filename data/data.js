@@ -113,7 +113,7 @@ export const examTypes = [
 export const eClassScheds = [
     {
         id: 1,
-        starts_at: '2017-06-08T07:25:48',
+        starts_at: '2017-05-29T07:25:48',
         regStatus: true,
         status: 'Not Started',
         eClass: {
@@ -203,7 +203,87 @@ export const eClassScheds = [
         ]
     }, {
         id: 3,
-        starts_at: '2017-06-08T10:25:48',
+        starts_at: '2017-06-08T10:00:00',
+        regStatus: false,
+        status: 'Started',
+        eClass: {
+            id: 1,
+            length_in_minutes: 30,
+            title: 'Voluptatem harum sapiente id deleniti accusamus.',
+            price: 9.99,
+            seatNum: 6,
+            type: 'Workshop',
+            description: 'lorem ipsum dolor sit amet',
+            tutor: {
+                id: 1,
+                first_name: 'tutor7@',
+                last_name: 'quesbook.us'
+            },
+            skill: {
+                id: 11,
+                name: 'ACT_English_Skill01',
+                section: {
+                    id: 1,
+                    name: 'ACT_English',
+                    examType: {
+                        id: 1,
+                        name: 'ACT'
+                    }
+                }
+            }
+        },
+        enrolledCount: 3,
+        enrolledList: [
+            {
+                id: 1,
+                name: 'Student 01',
+                avatar: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkAQMAAABEgsN2AAAABlBMVEVj0gn/\n//+lhIGaAAAAz0lEQVR4nO3bMQ7CMAwAQNoFfgE/pTyNn8APGOlCEWmHVIGl\nEonanLfYOsVjZMXtsCAe7W5JUBRFUVRl6t584hASQ5PErNAV6ZCiKIqiKIqq\nQTXpcOf5r7soiqIoiqIoaow+zD2nxCUcTmmhZIcURVEURVFUFeocJqK3LHdR\nFEVRFEVR1at9eH6+xkM8F50VSnZIURRFURRFbVX18b7S+FP0GmXa7ypnhxRF\nURRFUdRWlbkoRVEURVEUlV8do3X5n3v0U6Er0iFFURRFrUy9AcYemAU/T1jZ\nAAAAAElFTkSuQmCC\n'
+            }, {
+                id: 2,
+                name: 'Student 02',
+                avatar: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkAQMAAABEgsN2AAAABlBMVEVj0gn/\n//+lhIGaAAAAz0lEQVR4nO3bMQ7CMAwAQNoFfgE/pTyNn8APGOlCEWmHVIGl\nEonanLfYOsVjZMXtsCAe7W5JUBRFUVRl6t584hASQ5PErNAV6ZCiKIqiKIqq\nQTXpcOf5r7soiqIoiqIoaow+zD2nxCUcTmmhZIcURVEURVFUFeocJqK3LHdR\nFEVRFEVR1at9eH6+xkM8F50VSnZIURRFURRFbVX18b7S+FP0GmXa7ypnhxRF\nURRFUdRWlbkoRVEURVEUlV8do3X5n3v0U6Er0iFFURRFrUy9AcYemAU/T1jZ\nAAAAAElFTkSuQmCC\n'
+            }, {
+                id: 3,
+                name: 'Student 03',
+                avatar: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkAQMAAABEgsN2AAAABlBMVEVj0gn/\n//+lhIGaAAAAz0lEQVR4nO3bMQ7CMAwAQNoFfgE/pTyNn8APGOlCEWmHVIGl\nEonanLfYOsVjZMXtsCAe7W5JUBRFUVRl6t584hASQ5PErNAV6ZCiKIqiKIqq\nQTXpcOf5r7soiqIoiqIoaow+zD2nxCUcTmmhZIcURVEURVFUFeocJqK3LHdR\nFEVRFEVR1at9eH6+xkM8F50VSnZIURRFURRFbVX18b7S+FP0GmXa7ypnhxRF\nURRFUdRWlbkoRVEURVEUlV8do3X5n3v0U6Er0iFFURRFrUy9AcYemAU/T1jZ\nAAAAAElFTkSuQmCC\n'
+            }
+        ]
+    }, {
+        id: 4,
+        starts_at: '2017-07-08T10:25:48',
+        regStatus: true,
+        status: 'Not Started',
+        eClass: {
+            id: 2,
+            length_in_minutes: 120,
+            title: 'Voluptatem harum sapiente id deleniti accusamus.',
+            price: 999.99,
+            seatNum: 200,
+            type: 'Lecture',
+            description: 'lorem ipsum dolor sit amet',
+            tutor: {
+                id: 2,
+                first_name: 'tutor8@',
+                last_name: 'quesbook.us'
+            },
+            skill: {
+                id: 5,
+                name: 'TOEFL_English_Skill02',
+                section: {
+                    id: 2,
+                    name: 'TOEFL_English',
+                    examType: {
+                        id: 52,
+                        name: 'TOEFL'
+                    }
+                }
+            }
+        },
+        enrolledCount: 0,
+        enrolledList: []
+    }, {
+        id: 5,
+        starts_at: '2017-07-06T10:25:48',
         regStatus: true,
         status: 'Not Started',
         eClass: {

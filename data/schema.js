@@ -129,10 +129,10 @@ type Query {
   sectionWithStudyArticle: [ActSection]
   studyArticles(id_eq: ID, id_in: [ID], topic_id_eq: ID, topic_name_eq: String, section_id_eq: ID): [ActStudyArticle]
   tutorApplication(state: String, id_eq: Int): [Application]
-  tutors: [Tutor]
+  tutors(page: Int!): [Tutor]
   examTypeList: [ExamType]
   reminderList: [Reminder]
-  eClassSchedList: [EClassSched]
+  eClassSchedList(year: Int!, month: Int!): [EClassSched]
 }
 
 # this schema allows the following mutation:
