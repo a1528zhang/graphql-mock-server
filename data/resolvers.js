@@ -13,17 +13,19 @@ const resolveFunctions = {
         studyArticles(_, {id_eq, id_in, topic_id_eq, topic_name_eq, section_id_eq}) {
             return [find(Data.articles, {id: parseInt(id_eq)})];
         },
-        tutorApplication(_, {state, id_eq}) {
-            if (state) {
-                return filter(Data.applications, function(d) {
-                    return d.skills[0].state === state
-                });
+        tutorApplications(_, {id_eq, page, per, sort_name, details_exam_type_eq, details_state_eq, skills_name_cont}) {
+            if (details_state_eq) {
+                return filter(Data.applications, function(d){ return d.details[0].state === details_state_eq});
             } else if (id_eq) {
                 return [find(Data.applications, {id: parseInt(id_eq)})];
             }
-            return Data.openApplications
+            return Data.applications
         },
-        tutors(_, {page}) {
+        tutors(_, {page, per, sort_name,
+            first_name_or_last_name_cont, profile_account_state_eq, profile_state_eq, id_eq}) {
+            if (id_eq) {
+                return filter(Data.tutors, function(d){ return d.id === id_eq});
+            }
             return Data.tutors;
         },
         examTypeList() {

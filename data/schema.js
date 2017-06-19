@@ -38,18 +38,48 @@ type ActSection {
   topics: [ActTopic]
 }
 
-type Section{
+type ActSection{
   id: Int
   name: String
   skills: [Skill]
   examType: ExamType
 }
-
-type Skills {
-  id: Int
+type ActSkill {
+  id: Int!
   name: String
+  section: ActSection
+}
+type Details {
+  id: Int
+  exam_type: String
+  evaluate_score: Float
   state: String
-  section: Section
+  skill: ActSkill
+}
+type User{
+  email: String
+  first_name: String
+  id: Int
+  last_name: String
+  mobile_phone: String
+}
+type Comment{
+  content: String
+  created_at: String,
+  id: Int,
+  score: Float,
+  student: User
+}
+type TutorProfile {
+  edu_background: String
+  id: Int!
+  teach_experience: String
+  account_state: String
+  exam_type: [String]
+  skill_number: Int
+  state: String
+  approved_skills: [ActSkill]
+  tutor_rating: Float
 }
 
 type Tutor{
@@ -58,20 +88,25 @@ type Tutor{
   first_name:String
   last_name: String
   mobile_phone: String
+<<<<<<< Updated upstream
   avatar: String
 }
 type TestType{
   id: Int
   name: String
   desc: String
+=======
+  profile: TutorProfile
+  comments: [Comment]
+>>>>>>> Stashed changes
 }
 type Application {
   id: Int
   date_of_application: String
   last_qb_date: String
-  skills: [Skills]
+  details(state_eq: String): [Details]
   tutor: Tutor
-  tutor_test_types: [TestType]
+  test_score: Float
 }
 
 # For Admin Calendar
@@ -129,8 +164,10 @@ type EClassSched {
 type Query {
   sectionWithStudyArticle: [ActSection]
   studyArticles(id_eq: ID, id_in: [ID], topic_id_eq: ID, topic_name_eq: String, section_id_eq: ID): [ActStudyArticle]
-  tutorApplication(state: String, id_eq: Int): [Application]
-  tutors(page: Int!): [Tutor]
+  tutorApplications(id_eq: Int, page: Int, per: Int, sort_name: String, details_exam_type_eq: String,
+    details_state_eq: String, skills_name_cont: String): [Application]
+  tutors(page: Int, per: Int, sort_name: String, first_name_or_last_name_cont: String, 
+    profile_account_state_eq: String, profile_state_eq: String, id_eq: Int): [Tutor]
   examTypeList: [ExamType]
   reminderList: [Reminder]
   eClassSchedList(year: Int!, month: Int!): [EClassSched]
