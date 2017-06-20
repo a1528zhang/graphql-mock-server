@@ -38,12 +38,6 @@ type ActSection {
   topics: [ActTopic]
 }
 
-type ActSection{
-  id: Int
-  name: String
-  skills: [Skill]
-  examType: ExamType
-}
 type ActSkill {
   id: Int!
   name: String
@@ -123,6 +117,13 @@ type Application {
 
 # For Admin Calendar
 
+type Section{
+  id: Int
+  name: String
+  skills: [Skill]
+  examType: ExamType
+}
+
 type Student {
     id: Int!
     name: String!
@@ -177,8 +178,10 @@ type EClassSched {
 type Query {
   sectionWithStudyArticle: [ActSection]
   studyArticles(id_eq: ID, id_in: [ID], topic_id_eq: ID, topic_name_eq: String, section_id_eq: ID): [ActStudyArticle]
-  tutorApplication(state: String, id_eq: Int): [Application]
-  tutors(page: Int): [Tutor]
+  tutorApplications(id_eq: Int, page: Int, per: Int, sort_name: String, details_exam_type_eq: String,
+    details_state_eq: String, skills_name_cont: String): [Application]
+  tutors(page: Int, per: Int, sort_name: String, first_name_or_last_name_cont: String,
+    profile_account_state_eq: String, profile_state_eq: String, id_eq: Int): [Tutor]
   examTypeList: [ExamType]
   reminderList: [Reminder]
   eClassSchedList(year: Int!, month: Int!): [EClassSched]
