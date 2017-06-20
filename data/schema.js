@@ -38,12 +38,6 @@ type ActSection {
   topics: [ActTopic]
 }
 
-type ActSection{
-  id: Int
-  name: String
-  skills: [Skill]
-  examType: ExamType
-}
 type ActSkill {
   id: Int!
   name: String
@@ -88,17 +82,29 @@ type Tutor{
   first_name:String
   last_name: String
   mobile_phone: String
-<<<<<<< Updated upstream
   avatar: String
+  profile: TutorProfile
 }
+
+type TutorProfile {
+    account_state: String
+    description: String
+    edu_background: String
+    exam_type: [String]
+    id: Int!
+    number_of_classes: Int
+    overall_score: String
+    skill_number: Int
+    state: String
+    teach_experience: String
+    tutor_intro_video: String
+    tutor_rating: Float
+}
+
 type TestType{
   id: Int
   name: String
   desc: String
-=======
-  profile: TutorProfile
-  comments: [Comment]
->>>>>>> Stashed changes
 }
 type Application {
   id: Int
@@ -110,6 +116,13 @@ type Application {
 }
 
 # For Admin Calendar
+
+type Section{
+  id: Int
+  name: String
+  skills: [Skill]
+  examType: ExamType
+}
 
 type Student {
     id: Int!
@@ -152,6 +165,7 @@ type EClassSched {
     id: Int!
     starts_at: String!
     regStatus: Boolean!
+    is_show: Boolean
     status: String!
     eClass: EClass
     enrolledCount: Int!
@@ -166,7 +180,7 @@ type Query {
   studyArticles(id_eq: ID, id_in: [ID], topic_id_eq: ID, topic_name_eq: String, section_id_eq: ID): [ActStudyArticle]
   tutorApplications(id_eq: Int, page: Int, per: Int, sort_name: String, details_exam_type_eq: String,
     details_state_eq: String, skills_name_cont: String): [Application]
-  tutors(page: Int, per: Int, sort_name: String, first_name_or_last_name_cont: String, 
+  tutors(page: Int, per: Int, sort_name: String, first_name_or_last_name_cont: String,
     profile_account_state_eq: String, profile_state_eq: String, id_eq: Int): [Tutor]
   examTypeList: [ExamType]
   reminderList: [Reminder]
