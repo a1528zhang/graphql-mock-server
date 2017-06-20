@@ -59,7 +59,24 @@ type Tutor{
   last_name: String
   mobile_phone: String
   avatar: String
+  profile: TutorProfile
 }
+
+type TutorProfile {
+    account_state: String
+    description: String
+    edu_background: String
+    exam_type: [String]
+    id: Int!
+    number_of_classes: Int
+    overall_score: String
+    skill_number: Int
+    state: String
+    teach_experience: String
+    tutor_intro_video: String
+    tutor_rating: Float
+}
+
 type TestType{
   id: Int
   name: String
@@ -117,6 +134,7 @@ type EClassSched {
     id: Int!
     starts_at: String!
     regStatus: Boolean!
+    is_show: Boolean
     status: String!
     eClass: EClass
     enrolledCount: Int!
@@ -130,7 +148,7 @@ type Query {
   sectionWithStudyArticle: [ActSection]
   studyArticles(id_eq: ID, id_in: [ID], topic_id_eq: ID, topic_name_eq: String, section_id_eq: ID): [ActStudyArticle]
   tutorApplication(state: String, id_eq: Int): [Application]
-  tutors(page: Int!): [Tutor]
+  tutors(page: Int): [Tutor]
   examTypeList: [ExamType]
   reminderList: [Reminder]
   eClassSchedList(year: Int!, month: Int!): [EClassSched]

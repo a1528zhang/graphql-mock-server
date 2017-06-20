@@ -6,16 +6,25 @@ import {find, filter} from 'lodash';
 export const tutors = [
     {
         id: 1,
+        profile: {
+            id: 1
+        },
         first_name: 'tutor7@',
         last_name: 'quesbook.us',
         avatar: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkAQMAAABEgsN2AAAABlBMVEVj0gn/\n//+lhIGaAAAAz0lEQVR4nO3bMQ7CMAwAQNoFfgE/pTyNn8APGOlCEWmHVIGl\nEonanLfYOsVjZMXtsCAe7W5JUBRFUVRl6t584hASQ5PErNAV6ZCiKIqiKIqq\nQTXpcOf5r7soiqIoiqIoaow+zD2nxCUcTmmhZIcURVEURVFUFeocJqK3LHdR\nFEVRFEVR1at9eH6+xkM8F50VSnZIURRFURRFbVX18b7S+FP0GmXa7ypnhxRF\nURRFUdRWlbkoRVEURVEUlV8do3X5n3v0U6Er0iFFURRFrUy9AcYemAU/T1jZ\nAAAAAElFTkSuQmCC\n'
     }, {
         id: 2,
+        profile: {
+            id: 2
+        },
         first_name: 'tutor8@',
         last_name: 'quesbook.us',
         avatar: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkAQMAAABEgsN2AAAABlBMVEVj0gn/\n//+lhIGaAAAAz0lEQVR4nO3bMQ7CMAwAQNoFfgE/pTyNn8APGOlCEWmHVIGl\nEonanLfYOsVjZMXtsCAe7W5JUBRFUVRl6t584hASQ5PErNAV6ZCiKIqiKIqq\nQTXpcOf5r7soiqIoiqIoaow+zD2nxCUcTmmhZIcURVEURVFUFeocJqK3LHdR\nFEVRFEVR1at9eH6+xkM8F50VSnZIURRFURRFbVX18b7S+FP0GmXa7ypnhxRF\nURRFUdRWlbkoRVEURVEUlV8do3X5n3v0U6Er0iFFURRFrUy9AcYemAU/T1jZ\nAAAAAElFTkSuQmCC\n'
     }, {
         id: 3,
+        profile: {
+            id: 3
+        },
         first_name: 'tutor10@',
         last_name: 'quesbook.us',
         avatar: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkAQMAAABEgsN2AAAABlBMVEVj0gn/\n//+lhIGaAAAAz0lEQVR4nO3bMQ7CMAwAQNoFfgE/pTyNn8APGOlCEWmHVIGl\nEonanLfYOsVjZMXtsCAe7W5JUBRFUVRl6t584hASQ5PErNAV6ZCiKIqiKIqq\nQTXpcOf5r7soiqIoiqIoaow+zD2nxCUcTmmhZIcURVEURVFUFeocJqK3LHdR\nFEVRFEVR1at9eH6+xkM8F50VSnZIURRFURRFbVX18b7S+FP0GmXa7ypnhxRF\nURRFUdRWlbkoRVEURVEUlV8do3X5n3v0U6Er0iFFURRFrUy9AcYemAU/T1jZ\nAAAAAElFTkSuQmCC\n'
@@ -115,6 +124,7 @@ export const eClassScheds = [
         id: 1,
         starts_at: '2017-05-29T07:25:48',
         regStatus: true,
+        is_show: true,
         status: 'Not Started',
         eClass: {
             id: 1,
@@ -158,6 +168,7 @@ export const eClassScheds = [
         id: 2,
         starts_at: '2017-06-08T10:25:48',
         regStatus: false,
+        is_show: true,
         status: 'Started',
         eClass: {
             id: 1,
@@ -205,6 +216,7 @@ export const eClassScheds = [
         id: 3,
         starts_at: '2017-06-08T10:00:00',
         regStatus: false,
+        is_show: true,
         status: 'Started',
         eClass: {
             id: 1,
@@ -252,6 +264,7 @@ export const eClassScheds = [
         id: 4,
         starts_at: '2017-07-08T10:25:48',
         regStatus: true,
+        is_show: true,
         status: 'Not Started',
         eClass: {
             id: 2,
