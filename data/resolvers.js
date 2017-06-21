@@ -31,7 +31,7 @@ const resolveFunctions = {
         examTypeList() {
             return Data.examTypes;
         },
-        eClassSchedList(_, {year, month}) {
+        eClassScheduleList(_, {year, month}) {
             let lastDay = new Date(year, month - 2, 0).getDate();
             lastDay -= 7;
             let dateStart = new Date(year, month - 2, lastDay);
