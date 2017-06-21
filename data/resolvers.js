@@ -50,12 +50,12 @@ const resolveFunctions = {
         }
     },
     Mutation: {
-        updateEClassSched_ShutDown(_, {id}) {
+        updateScheduleShutDown(_, {id}) {
             let ret = find(Data.eClassScheds, {id: parseInt(id)});
             ret.status = 'Shut Down';
             return ret;
         },
-        updateEClassSched_SaveSendEmail(_, {id, idTutor, typeClass, regStatus, isRemoveAll}) {
+        updateScheduleInfo(_, {id, idTutor, typeClass, regStatus, isRemoveAll}) {
             let ret = find(Data.eClassScheds, {id: parseInt(id)});
             let tutor = find(Data.tutors, {id: parseInt(idTutor)});
 

@@ -146,7 +146,9 @@ type Reminder {
 type Skill {
     id: Int!
     name: String!
-    section: Section
+    exam_type: String!
+    section_id: String!
+    section_name: String!
 }
 
 type EClass {
@@ -189,10 +191,10 @@ type Query {
 
 # this schema allows the following mutation:
 type Mutation {
-    updateEClassSched_ShutDown (
+    updateScheduleShutDown (
         id: Int!
     ): EClassSched
-    updateEClassSched_SaveSendEmail (
+    updateScheduleInfo (
         id: Int!
         idTutor: Int!
         typeClass: String!

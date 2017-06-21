@@ -135,21 +135,16 @@ export const eClassScheds = [
             type: 'Workshop',
             description: 'lorem ipsum dolor sit amet',
             tutor: {
-                id: 1,
+                id: 14032,
                 first_name: 'tutor7@',
                 last_name: 'quesbook.us'
             },
             skill: {
                 id: 11,
                 name: 'ACT_English_Skill01',
-                section: {
-                    id: 1,
-                    name: 'ACT_English',
-                    examType: {
-                        id: 1,
-                        name: 'ACT'
-                    }
-                }
+                exam_type: 'ACT',
+                section_id: 1,
+                section_name: 'ACT_English'
             }
         },
         enrolledCount: 2,
@@ -171,29 +166,24 @@ export const eClassScheds = [
         is_show: true,
         status: 'Started',
         eClass: {
-            id: 1,
+            id: 2,
             length_in_minutes: 30,
-            title: 'Voluptatem harum sapiente id deleniti accusamus.',
+            title: 'abc Voluptatem harum sapiente id deleniti accusamus.',
             price: 9.99,
             seatNum: 6,
             type: 'Workshop',
             description: 'lorem ipsum dolor sit amet',
             tutor: {
-                id: 1,
-                first_name: 'tutor7@',
+                id: 14035,
+                first_name: 'tutor10@',
                 last_name: 'quesbook.us'
             },
             skill: {
-                id: 11,
-                name: 'ACT_English_Skill01',
-                section: {
-                    id: 1,
-                    name: 'ACT_English',
-                    examType: {
-                        id: 1,
-                        name: 'ACT'
-                    }
-                }
+                id: 62,
+                name: 'TOEFL_Reading_Skill02',
+                exam_type: 'TOEFL',
+                section_id: 2,
+                section_name: 'TOEFL_Reading'
             }
         },
         enrolledCount: 3,
@@ -227,21 +217,16 @@ export const eClassScheds = [
             type: 'Workshop',
             description: 'lorem ipsum dolor sit amet',
             tutor: {
-                id: 1,
+                id: 14032,
                 first_name: 'tutor7@',
                 last_name: 'quesbook.us'
             },
             skill: {
                 id: 11,
                 name: 'ACT_English_Skill01',
-                section: {
-                    id: 1,
-                    name: 'ACT_English',
-                    examType: {
-                        id: 1,
-                        name: 'ACT'
-                    }
-                }
+                exam_type: 'ACT',
+                section_id: 1,
+                section_name: 'ACT_English'
             }
         },
         enrolledCount: 3,
@@ -268,28 +253,23 @@ export const eClassScheds = [
         status: 'Not Started',
         eClass: {
             id: 2,
-            length_in_minutes: 120,
-            title: 'Voluptatem harum sapiente id deleniti accusamus.',
-            price: 999.99,
-            seatNum: 200,
-            type: 'Lecture',
+            length_in_minutes: 30,
+            title: 'abc Voluptatem harum sapiente id deleniti accusamus.',
+            price: 9.99,
+            seatNum: 6,
+            type: 'Workshop',
             description: 'lorem ipsum dolor sit amet',
             tutor: {
-                id: 2,
-                first_name: 'tutor8@',
+                id: 14035,
+                first_name: 'tutor10@',
                 last_name: 'quesbook.us'
             },
             skill: {
-                id: 5,
-                name: 'TOEFL_English_Skill02',
-                section: {
-                    id: 2,
-                    name: 'TOEFL_English',
-                    examType: {
-                        id: 52,
-                        name: 'TOEFL'
-                    }
-                }
+                id: 62,
+                name: 'TOEFL_Reading_Skill02',
+                exam_type: 'TOEFL',
+                section_id: 2,
+                section_name: 'TOEFL_Reading'
             }
         },
         enrolledCount: 0,
@@ -300,29 +280,24 @@ export const eClassScheds = [
         regStatus: true,
         status: 'Not Started',
         eClass: {
-            id: 2,
-            length_in_minutes: 120,
-            title: 'Voluptatem harum sapiente id deleniti accusamus.',
-            price: 999.99,
-            seatNum: 200,
-            type: 'Lecture',
+            id: 3,
+            length_in_minutes: 30,
+            title: 'abc Voluptatem harum sapiente id deleniti accusamus.',
+            price: 9.99,
+            seatNum: 6,
+            type: 'Workshop',
             description: 'lorem ipsum dolor sit amet',
             tutor: {
-                id: 2,
-                first_name: 'tutor8@',
+                id: 14035,
+                first_name: 'tutor10@',
                 last_name: 'quesbook.us'
             },
             skill: {
-                id: 5,
-                name: 'TOEFL_English_Skill02',
-                section: {
-                    id: 2,
-                    name: 'TOEFL_English',
-                    examType: {
-                        id: 52,
-                        name: 'TOEFL'
-                    }
-                }
+                id: 22,
+                name: 'ACT_Math_Skill02',
+                exam_type: 'ACT',
+                section_id: 2,
+                section_name: 'ACT_Math'
             }
         },
         enrolledCount: 0,
