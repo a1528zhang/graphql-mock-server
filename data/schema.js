@@ -186,7 +186,7 @@ type Query {
     profile_account_state_eq: String, profile_state_eq: String, id_eq: Int): [Tutor]
   examTypeList: [ExamType]
   reminderList: [Reminder]
-  eClassSchedList(year: Int!, month: Int!): [EClassSched]
+  eClassScheduleList(year: Int!, month: Int!): [EClassSched]
 }
 
 # this schema allows the following mutation:
